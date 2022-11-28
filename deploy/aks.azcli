@@ -16,7 +16,10 @@ az extension add -n k8s-configuration --upgrade
 az extension add -n k8s-extension --upgrade
 
 # install Flux extension
-az k8s-extension create -g $RG -c $CLUSTER -n flux --extension-type microsoft.flux -t managedClusters --auto-upgrade-minor-version true
+az k8s-extension create -g $RG -c $CLUSTER -n flux --extension-type microsoft.flux \
+    -t managedClusters --auto-upgrade-minor-version true \
+    --config image-automation-controller.enabled=true \
+    --config image-reflector-controller.enabled=true
 
 # get all pods from the flux namespace
 kubectl get pods -n flux-system
