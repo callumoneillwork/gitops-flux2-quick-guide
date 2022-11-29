@@ -9,7 +9,8 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"ms-vscode.azurecli",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"weaveworks.vscode-gitops-tools"
 			]
 		}
 	},
