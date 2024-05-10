@@ -16,11 +16,11 @@ az k8s-configuration flux delete -g $RG -c $CLUSTER -n cluster-config -t managed
 # to create flux kustomizations etc...
 flux create source helm redis \
    --url=https://charts.bitnami.com/bitnami \
-   --interval=10m --export
+   --interval=1m --export
 
 flux create source helm redis \
    --url=https://charts.bitnami.com/bitnami --namespace cluster-config \
-   --interval=10m --export
+   --interval=1m --export
 
 flux create helmrelease redis \
   --source=HelmRepository/redis \
